@@ -1,0 +1,16 @@
+name: Ignite
+type: theme
+description: A proviate theme for Ignite website (Only for Saudi MCIT).
+core_version_requirement: ^8 || ^9
+base theme: false
+libraries:
+  - ignite/global-styling
+regions:
+  navbar_branding: 'Page navbar branding (Logo or title)'
+  navbar_menu: 'Page navbar menu'
+  navbar_additional_menu: 'Page navbar additional menu'
+  introduction_area: 'Introduction Text'
+  carousel_area: 'Carousel Slider'
+  content: Content
+  footer_copyright: 'Column 1 of footer copyright'
+  footer_copyright_social: 'Column 2 of footer copyright'

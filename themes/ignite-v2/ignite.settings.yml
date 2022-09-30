@@ -1,0 +1,4 @@
+logo:
+  path: 'themes/ignite/dist/img/logos/logo.svg'
+  use_default: false
+

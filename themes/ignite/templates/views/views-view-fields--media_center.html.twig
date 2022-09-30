@@ -1,0 +1,10 @@
+<div class="news-item" data-aos="zoom-in" onClick="window.location.href = '{{ fields.view_node.content }}'">
+    <div class="news-item-body d-flex flex-row justify-content-center" {% if fields.field_news_thumb.content %} style="background-image: url({{ file_url(fields.field_news_thumb.content|striptags|trim) }})" {% endif %}>
+
+        <div class="align-self-end mb-3 text-center">
+            <h5 class="text-white">
+                {{ fields.title.content|striptags|trim }}
+            </h5>
+        </div>
+    </div>
+</div>

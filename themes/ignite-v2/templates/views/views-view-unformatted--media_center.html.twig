@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="page-header" style="background-image: url({{ file_url(directory ~ '/dist/img/bg/bg-news.jpg') }});"></div>
+
+<!-- Section:Events -->
+
+<div class="section news">
+
+	<div class="section-inner">
+		<div class="container">
+			<div class="row gy-3">
+				<div class="col-12">
+					<h1 class="section-title">{{ "News"|t }}
+					</div>
+				</div>
+
+				<div class="row mt-5">
+					{% for row in rows %}
+						{% set row_classes = [default_row_class ? 'views-row',] %}
+
+						<div class="col-12 col-md-4">
+							{{- row.content -}}
+						</div>
+					{% endfor %}
+				</div>
+
+				<div class="row mt-5 p-5 justify-content-center text-center">
+					<div class="col-12 col-md-4">
+						<a href="#" class="btn btn-primary btn-lg">مكتبة الصورة</a>
+					</div>
+					<div class="col-12 col-md-4">
+						<a href="#" class="btn text-white bg-ig-blue btn-lg">هوية IGNITE</a>
+					</div>
+					<div class="col-12 col-md-4">
+						<a href="#" class="btn text-white bg-ig-green btn-lg">تواصل معنا</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>

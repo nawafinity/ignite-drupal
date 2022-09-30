@@ -1,0 +1,16 @@
+<section{{ attributes.addClass('section-news-page') }}>
+    <div class="section-header" {% if content.field_news_thumb %} style="background-image: url({{ file_url(content.field_news_thumb['#items'].entity.uri.value) }})" {% endif %}>
+        <div class="row text-center justify-content-center">
+            <div class="col-12">
+                <h1>
+                    {{ label }}
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="section-inner">
+        <div class="container">
+            {{ content.body }}
+        </div>
+    </div>
+</article>

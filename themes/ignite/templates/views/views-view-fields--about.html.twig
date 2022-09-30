@@ -1,0 +1,19 @@
+{% if fields.field_member_top.content == '0' %}
+<div class="member-item" data-aos="zoom-in">
+	<div class="member-item-body d-flex flex-row justify-content-center" {% if fields.field_member_photo.content %} style="background-image: url({{ file_url(fields.field_member_photo.content|striptags|trim) }})" {% endif %}>
+
+
+		<div class="align-self-end mb-3 text-center">
+			<h5 class="text-white">{{ fields.title.content|striptags|trim }}</h5>
+
+			<h6 class="text-white">{{ fields.field_member_name.content }}</h6>
+
+
+		</div>
+	</div>
+
+	<p class="mt-3 text-center fs-5">{{ fields.field_member_job_title.content }}</p>
+
+
+</div>
+{% endif %}

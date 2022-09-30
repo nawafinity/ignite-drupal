@@ -1,0 +1,160 @@
+//---------------------------------------------
+//
+//  Table of Contents
+//    0. Google Fonts
+//    1. Basics
+//    2. Page Layout
+//    3. Components
+//
+//---------------------------------------------
+
+//---------------------------------------------
+// 1. Basics
+//---------------------------------------------
+@import "variables";
+@import "fonts";
+@import "bootstrap";
+@import "~animatewithsass";
+@import "~animate.css/animate.css";
+@import "~aos/dist/aos.css";
+@import "~sweetalert2/dist/sweetalert2.css";
+
+/*!rtl:begin:ignore*/
+@import "~owl.carousel/src/scss/owl.carousel";
+/*!rtl:end:ignore*/
+/*!rtl:begin:ignore*/
+@import "~owl.carousel/src/scss/owl.theme.default";
+/*!rtl:end:ignore*/
+
+/*!rtl:begin:ignore*/
+[dir="rtl"] {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    transform: scaleX(-1);
+  }
+}
+
+/*!rtl:end:ignore*/
+
+.text-ig-green {
+  color: $ignite-green;
+}
+
+.text-ig-blue {
+  color: $ignite-blue;
+}
+
+.text-ig-red {
+  color: $ignite-red;
+}
+
+.bg-ig-blue {
+  background-color: $ignite-blue;
+}
+
+.bg-ig-green {
+  background-color: $ignite-green;
+}
+
+
+//---------------------------------------------
+// 2. Page Layout
+//---------------------------------------------
+a,
+button {
+  transition: all 0.3s ease-out 0s;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+
+body {
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #fff;
+  }
+}
+
+#loader {
+  img {
+    max-width: 380px;
+    @include pulse($duration: 1s, $count: infinite);
+  }
+}
+
+.divider {
+  &-split {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 250px;
+    }
+  }
+
+  &-tilt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+  }
+
+  &-bg-gray {
+    svg {
+      fill: $gray-200;
+    }
+  }
+
+  &-bg-white {
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+#banner_canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+//---------------------------------------------
+// 3.Components
+//---------------------------------------------
+
+@import "components/layout";
+@import "components/slider";
+
+// Override
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  transform: scaleX(1) !important /* rtl:-1 */
+;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 4rem;
+  height: 4rem;
+}
