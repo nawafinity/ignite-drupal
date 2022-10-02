@@ -12,14 +12,14 @@ use Drupal\KernelTests\KernelTestBase;
  */
 class TextBlockTest extends KernelTestBase {
 
-  public static $modules = ['system', 'block', 'filter', 'text_block'];
+  protected static $modules = ['system', 'block', 'filter', 'text_block'];
 
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  public function setUp(): void {
     parent::setUp();
-    $this->installConfig(['filter']);
+    $this->installConfig(static::$modules);
   }
 
   /**

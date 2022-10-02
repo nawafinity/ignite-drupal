@@ -1,0 +1,10 @@
+.#{$prefix}page {
+  &-title {
+    .inner {
+      background: var(--ige-primary);
+      color: var(--ige-white);
+      padding: toRem(33);
+      border-radius: toRem(33);
+    }
+  }
+}

@@ -1,16 +1,16 @@
 styles:
   css:
     theme:
-      dist/css/main.css: {}
+      dist/webassets/css/ignite.css: { }
   js:
-    dist/js/main.js: { }
+    dist/webassets/js/ignite.js: { }
 
 
 styles_rtl:
   css:
     theme:
-      dist/css/main.rtl.css: {}
+      dist/webassets/css/ignite.rtl.css: { }
   js:
-    dist/js/main.js: { }
+    dist/webassets/js/ignite.js: { }
 
 

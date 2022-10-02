@@ -1,0 +1,91 @@
+{% extends "@ignite/layout/page.html.twig" %}
+{% set page_title = "About Ignite"|t %}
+
+{% block main %}
+  <section class="my-px-20">
+    <div class="container-xl">
+      {% include "@ignite/partials/widgets/about.html.twig" %}
+    </div>
+  </section>
+
+  <section class="my-px-30">
+    <div class="container">
+      <div class="ige-about-exp">
+        <div class="row">
+          <div class="col-12 col-lg-2 ige-about-exp__item">
+            <div class="ige-about-exp__icon">
+              <span>I</span>
+            </div>
+            <div class="ige-about-exp__title">
+              <h4>{{ "Invigorate"|t }}</h4>
+            </div>
+            <div class="ige-about-exp__description">
+              <p>{{ "Preparation of digital content in KSA"|t }}</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-2 ige-about-exp__item">
+            <div class="ige-about-exp__icon">
+              <span>G</span>
+            </div>
+            <div class="ige-about-exp__title">
+              <h4>{{ "Grow"|t }}</h4>
+            </div>
+            <div class="ige-about-exp__description">
+              <p>{{ "Development of investment potentials in digital content and its platforms"|t }}</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-2 ige-about-exp__item">
+            <div class="ige-about-exp__icon">
+              <span>N</span>
+            </div>
+            <div class="ige-about-exp__title">
+              <h4>{{ "Nurture"|t }}</h4>
+            </div>
+            <div class="ige-about-exp__description">
+              <p>{{ "Sponsorship of local digital advertising sector"|t }}</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-2 ige-about-exp__item">
+            <div class="ige-about-exp__icon">
+              <span>I</span>
+            </div>
+            <div class="ige-about-exp__title">
+              <h4>{{ "Improve"|t }}</h4>
+            </div>
+            <div class="ige-about-exp__description">
+              <p>{{ "Access to talents in digital content and its platforms markets"|t }}</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-2 ige-about-exp__item">
+            <div class="ige-about-exp__icon">
+              <span>T</span>
+            </div>
+            <div class="ige-about-exp__title">
+              <h4>{{ "Transform"|t }}</h4>
+            </div>
+            <div class="ige-about-exp__description">
+              <p>{{ "Development of infrastructure of digital content and its platforms in KSA"|t }}</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-2 ige-about-exp__item">
+            <div class="ige-about-exp__icon">
+              <span>E</span>
+            </div>
+            <div class="ige-about-exp__title">
+              <h4>{{ "Enable"|t }}</h4>
+            </div>
+            <div class="ige-about-exp__description">
+              <p>{{ "Governance of the sector and improve relevant legislation"|t }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "@ignite/partials/widgets/statistics.html.twig" %}
+
+  {% include "@ignite/partials/widgets/about_details.html.twig" %}
+
+  {{ page.content }}
+{% endblock %}

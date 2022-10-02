@@ -30,19 +30,17 @@ We call a macro which calls itself to render the full tree.
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-<ul{{ attributes.addClass(['navbar-nav ms-auto']) }}>
-  {% else %}
-  <ul>
+      <ul{{ attributes.addClass(['navbar-nav ms-auto']) }}>
+    {% else %}
+      <ul>
     {% endif %}
     {% for item in items %}
-      {%
-        set classes_link = [
+      {% set classes_link = [
         'nav-link',
         item.is_expanded ? 'dropdown-toggle',
         item.is_collapsed ? 'dropdown-toggle',
         item.in_active_trail ? 'active',
-      ]
-      %}
+      ] %}
       <li{{ item.attributes.addClass('nav-item') }}>
         {{ link(item.title, item.url, { 'class': classes_link }) }}
         {% if item.below %}
@@ -50,6 +48,6 @@ We call a macro which calls itself to render the full tree.
         {% endif %}
       </li>
     {% endfor %}
-  </ul>
+    </ul>
   {% endif %}
-  {% endmacro %}
+{% endmacro %}

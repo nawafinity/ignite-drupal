@@ -14,3 +14,4 @@ regions:
   content: Content
   footer_copyright: 'Column 1 of footer copyright'
   footer_copyright_social: 'Column 2 of footer copyright'
+  news_area: 'News'

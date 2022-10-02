@@ -30,7 +30,7 @@ class TextBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static($configuration, $plugin_id , $plugin_definition, $container->get('module_handler'));
+    return new static($configuration, $plugin_id, $plugin_definition, $container->get('module_handler'));
   }
 
   /**
@@ -55,8 +55,9 @@ class TextBlock extends BlockBase implements ContainerFactoryPluginInterface {
    */
   public function defaultConfiguration() {
     $default = ['text' => ['value' => NULL, 'format' => NULL]];
-    if ($this->moduleHandler->moduleExists('filter')) {
-      $default['text']['format'] = filter_default_format();
+    $current_user = \Drupal::currentUser();
+    if ($this->moduleHandler->moduleExists('filter') && filter_formats($current_user)) {
+      $default['text']['format'] = filter_default_format($current_user);
     }
     return $default + parent::defaultConfiguration();
   }
@@ -106,6 +107,22 @@ class TextBlock extends BlockBase implements ContainerFactoryPluginInterface {
       '#text' => $value,
       '#format' => $format,
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function calculateDependencies() {
+    $dependencies = parent::calculateDependencies();
+    if ($this->moduleHandler->moduleExists('filter')) {
+      $dependencies['module'][] = 'filter';
+      if (isset($this->configuration['text']['format'])) {
+        if ($config = \Drupal::entityTypeManager()->getStorage('filter_format')->load($this->configuration['text']['format'])) {
+          $dependencies[$config->getConfigDependencyKey()][] = $config->getConfigDependencyName();
+        }
+      }
+    }
+    return $dependencies;
   }
 
 }

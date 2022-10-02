@@ -1,79 +1,77 @@
 <?php
 
 
-function ignite_form_system_theme_settings_alter(&$form, $form_state)
-{
+function ignite_form_system_theme_settings_alter(&$form, $form_state) {
   $socials = ['twitter', 'youtube', 'facebook', 'linkedin', 'instagram'];
 
-  $form['ignite_social'] = array(
+  $form['ignite_social'] = [
     '#type' => 'details',
     '#title' => t('Social Media'),
     '#description' => t('Social information displayed in the footer.'),
     '#weight' => -999,
-    '#open' => TRUE
-  );
+    '#open' => TRUE,
+  ];
 
 
   foreach ($socials as $social) {
-    $form['ignite_social']['ignite_social_' . $social] = array(
+    $form['ignite_social']['ignite_social_' . $social] = [
       '#type' => 'textfield',
       '#title' => t(ucfirst($social)),
       '#description' => 'Enter ' . ucfirst($social) . ' full link',
-      '#default_value' => theme_get_setting('ignite_social_' . $social)
-    );
+      '#default_value' => theme_get_setting('ignite_social_' . $social),
+    ];
   }
 
-  $form['ignite_additional'] = array(
+  $form['ignite_additional'] = [
     '#type' => 'details',
     '#title' => t('Additional Settings'),
     '#description' => t('Additional Ignite Theme Settings'),
     '#weight' => -998,
     '#open' => TRUE,
 
-    'ignite_additional_copyright' => array(
+    'ignite_additional_copyright' => [
       '#type' => 'textfield',
       '#title' => t('Copyright Text'),
       '#description' => t('Copyright text will displayed in the footer.'),
-      '#default_value' => theme_get_setting('ignite_additional_copyright')
-    )
-  );
+      '#default_value' => theme_get_setting('ignite_additional_copyright'),
+    ],
+  ];
 
-  $form['ignite_introduction'] = array(
+  $form['ignite_introduction'] = [
     '#type' => 'details',
     '#title' => t('Introduction'),
     '#description' => t('The introduction will be display on the frontpage.'),
     '#weight' => -997,
     '#open' => TRUE,
 
-    'ignite_introduction_status' => array(
+    'ignite_introduction_status' => [
       '#type' => 'radios',
       '#title' => t('Status'),
-      '#options' => array(
+      '#options' => [
         0 => t('No'),
-        1 => t('Yes')
-      ),
-      '#default_value' => theme_get_setting('ignite_introduction_status')
-    ),
-    'ignite_introduction_title' => array(
+        1 => t('Yes'),
+      ],
+      '#default_value' => theme_get_setting('ignite_introduction_status'),
+    ],
+    'ignite_introduction_title' => [
       '#type' => 'textfield',
       '#title' => t('Title'),
       '#description' => t('Introduction section title.'),
-      '#default_value' => theme_get_setting('ignite_introduction_title')
-    ),
-    'ignite_introduction_text' => array(
+      '#default_value' => theme_get_setting('ignite_introduction_title'),
+    ],
+    'ignite_introduction_text' => [
       '#type' => 'text_format',
       '#format' => 'full_html',
       '#title' => t('Text'),
       '#description' => t('Introduction section text.'),
-      '#default_value' => theme_get_setting('ignite_introduction_text.value')
-    )
-  );
+      '#default_value' => theme_get_setting('ignite_introduction_text.value'),
+    ],
+  ];
 
 
 }
 
-function ignite_preprocess_page(&$variables, $hook)
-{
+function ignite_preprocess_page(&$variables, $hook) {
   $socials = ['twitter', 'youtube', 'facebook', 'linkedin', 'instagram'];
 
   foreach ($socials as $social) {
@@ -86,7 +84,7 @@ function ignite_preprocess_page(&$variables, $hook)
   $variables['ignite_introduction_text'] = theme_get_setting('ignite_introduction_text.value');
 }
 
-function ignite_preprocess_webform(&$vars){
+function ignite_preprocess_webform(&$vars) {
   $wfid = $vars["element"]["#webform_id"];
   $wf = \Drupal\webform\Entity\Webform::load($wfid);
   $vars["title"] = $wf->label();

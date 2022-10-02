@@ -1,31 +1,30 @@
 {% extends "@ignite/layout/page.html.twig" %}
 
 {% block main %}
-  <!-- Section:Introduction -->
-  <div id="introduction" class="section">
+  {% include "@ignite/partials/sponsors.html.twig" %}
 
-    {% if page.introduction_area %}
-      <div class="section-inner">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-xl-8">
-              <h1 class="section-title">
-                {{ "What is"|t }}
-                <br>
-                <img style="width: 225px"
-                     src="{{ base_path ~ directory }}/dist/img/logo.svg"
-                     alt="Ignite"/>؟
-              </h1>
-
-              <div class="fs-4">
-                {{ page.introduction_area }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endif %}
+  <div class="mt-2">
+    {% include "@ignite/partials/clips.html.twig" %}
+    <div class="my-2 text-primary">
+      {% include "@ignite/partials/texts.html.twig" %}
+    </div>
   </div>
-  <!-- END Section:Introduction -->
+  <div class="mt-2">
+    {% include "@ignite/partials/clips.html.twig" %}
+    <div class="my-2 text-primary">
+      {% include "@ignite/partials/texts.html.twig" %}
+    </div>
+  </div>
+
+  <section class="my-px-40">
+    <div class="container-xl">
+      {% include "@ignite/partials/widgets/about.html.twig" %}
+    </div>
+  </section>
+
+  {% include "@ignite/partials/widgets/statistics.html.twig" %}
+
   {{ page.content }}
+
+  {{ page.news_area }}
 {% endblock %}

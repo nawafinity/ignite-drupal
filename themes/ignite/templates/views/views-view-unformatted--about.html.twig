@@ -15,188 +15,96 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-<div class="page-header" style="background-image: url({{ file_url(directory ~ '/dist/img/bg/bg-about.jpg') }});"></div>
-
 <!-- Section:Events -->
+<section class="ige-section my-px-60">
+  <div class="container-xl">
+    <div class="ige-section-title ige-section-title--under">
+      <h2>{{ "Digital Content Council Members"|t }}</h2>
+    </div>
+    <div class="ige-section-content">
+      <div class="ige-about-members">
+        <div class="row g-3">
+          {% for row in rows %}
+            {#            {% if row['content']['#row']._entity.field_member_top.value == '1' %} #}
+            {% set photo = row['content']['#row']._entity.field_member_photo.entity.fileuri %}
+            {% set entity = row['content']['#row']._entity %}
+            <div
+              class="{% if row['content']['#row']._entity.field_member_top.value == '1' %}col-12{% else %}col-6{% endif %}">
+              <div class="ige-about-members__item">
+                <div class="card ige-about-member">
+                  <div class="d-flex flex-row">
+                    <div class="ige-about-member__photo">
+                      <img src="{{ file_url(photo|striptags|trim) }}"
+                           class="img-fluid rounded-start" alt="1">
+                    </div>
+                    <div class="card-body">
+                      <span class="ige-about-member__title">{{ entity.field_member_prefix.value }}</span>
+                      <h5 class="ige-about-member__name card-title">{{ entity.title.value }}</h5>
+                      <p class="card-text">{{ entity.field_member_job_title.value }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {#            {% endif %} #}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{# <div id="members" class="section"> #}
+{#  <div class="section-header position-relative"> #}
+{#    <div class="container"> #}
+{#      <div class="row" style="height: 200px"> #}
+{#        <div class="col-12 col-lg-8 align-self-center"> #}
+{#          <h1 class="text-white">{{ "Members of Digital Content Council"|t }}</h1> #}
+{#        </div> #}
 
-<div id="about-items" class="section">
+{#        <div class="col-12 col-lg-4"> #}
+{#          {% for row in rows %} #}
+{#            {% if row['content']['#row']._entity.field_member_top.value == '1' %} #}
+{#              {% set photo = row['content']['#row']._entity.field_member_photo.entity.fileuri %} #}
+{#              {% set entity = row['content']['#row']._entity %} #}
 
-	<div class="section-inner">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h1 class="section-title">{{ "What is"|t}}
-						<br><img style="width: 225px" src="{{ file_url(directory ~ '/dist/img/logo.svg') }}" alt="Ignite"/>{{ "?"|t}}
-					</h1>
-					<p class="fs-4">
-						{{ "A program that brings together a number of government agencies with a view to regulate and activate digital content markets in KSA through"|t}}
-					</p>
-				</div>
-			</div>
+{#              <div #}
+{#                class="member-item-master position-absolute" {% if photo %} style="background-image: url({{ file_url(photo|striptags|trim) }})" {% endif %}> #}
 
-			<div class="row mt-5">
-				<div class="col-12 col-md-4">
-					<h1 class="font-weight-bolder text-ig-blue">{{ "Regulation"|t}}</h1>
-					<p>{{ "Facilitate engagement of private sector and entrepreneurs in the market through development of rules and regulations"|t}}</p>
-				</div>
-				<div class="col-12 col-md-4">
-					<h1 class="font-weight-bolder text-ig-green">{{ "Governance"|t }}</h1>
-					<p>{{ "An integrated governance that stimulates expansion and growth and encourages innovation"|t}}</p>
-				</div>
-				<div class="col-12 col-md-4">
-					<h1 class="font-weight-bolder text-ig-red">{{ "Development"|t }}</h1>
-					<p>{{ "Stimulate digital content market and attract various investments"|t }}</p>
-				</div>
-			</div>
+{#                <div class="member-item-body d-flex flex-row justify-content-center" style="height: 100%;"> #}
+{#                  <div class="align-self-end mb-3 text-center" style="z-index: 2;"> #}
+{#                    <h5 class="text-white"> #}
+{#                      {{ entity.title.value|striptags|trim }} #}
+{#                    </h5> #}
+{#                    <h6 class="text-white"> #}
+{#                      {{ entity.field_member_name.value }} #}
+{#                    </h6> #}
 
-		</div>
+{#                    #}{# <small class="text-white">{{ entity.field_member_job_title.value|raw }}</small> #}
+{#                  </div> #}
+{#                </div> #}
 
-		<div class="bg-primary mt-5" dir="ltr">
-			<div class="container p-5">
-				<div class="row">
-					<div class="col-6 col-md-2">
-						<div class="about-item green">
-							<div class="icon">I</div>
-							<span class="title">Invigorate</span>
-							<div class="description">{{ "Preparation of digital content in KSA"|t}}</div>
-						</div>
-					</div>
-					<div class="col-6 col-md-2">
-						<div class="about-item blue">
-							<div class="icon">G</div>
-							<span class="title">Grow</span>
-							<div class="description">{{ "Development of investment potentials in digital content and its platforms"|t}}</div>
-						</div>
-					</div>
-					<div class="col-6 col-md-2">
-						<div class="about-item red">
-							<div class="icon">N</div>
-							<span class="title">Nurture</span>
-							<div class="description">{{ "Sponsorship of local digital advertising sector"|t}}</div>
-						</div>
-					</div>
-					<div class="col-6 col-md-2">
-						<div class="about-item blue">
-							<div class="icon">I</div>
-							<span class="title">Improve</span>
-							<div class="description">{{"Access to talents in digital content and its platforms markets"|t}}
-							</div>
-						</div>
-					</div>
-					<div class="col-6 col-md-2">
-						<div class="about-item red">
-							<div class="icon">T</div>
-							<span class="title">Transform</span>
-							<div class="description">{{ "Development of infrastructure of digital content and its platforms in KSA"|t}}
-							</div>
-						</div>
-					</div>
-					<div class="col-6 col-md-2">
-						<div class="about-item green">
-							<div class="icon">E</div>
-							<span class="title">Enable</span>
-							<div class="description">{{"Governance of the sector and improve relevant legislation"|t}}</div>
-						</div>
-					</div>
-				</div>
+{#              </div> #}
 
-			</div>
-		</div>
-	</div>
-</div>
+{#            {% endif %} #}
 
-<div id="" class="section m-5">
-	<div class="container">
-		<div class="row gy-5">
-			<div class="col-12 col-md-6 text-center text-lg-start">
-				<div class="d-inline-block d-lg-flex">
-					<img src="{{ file_url(directory ~ '/dist/img/logos/red-badge.png') }}" alt="" class="d-none d-lg-block" style="height: 80px; width: 80px;"/>
-					<h1 style="font-size: 200px;" class="text-ig-red">36</h1>
-					<p class="d-inline-block d-lg-block ms-4 align-self-center fs-3 text-primary">
-						{{ "quality initiatives to improve content market"|t }}
-					</p>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 text-center text-lg-start">
-				<div class="list">
-					<div class="list-item">
-						<div class="border border-5 border-success border-top-0 border-bottom-0 border-end-0 ps-3">
-							<h4 class="text-ig-blue">{{"Financing initiatives"|t}}</h4>
-							<p class="fs-5">{{"to develop local content"|t}}</p>
-						</div>
-					</div>
-					<div class="list-item">
-						<div class="border border-5 border-success border-top-0 border-bottom-0 border-end-0 ps-3">
-							<h4 class="text-ig-blue">{{"Regulatory initiatives"|t}}</h4>
-							<p class="fs-5">{{"To ease labor, data protection and privacy and property rights regulations"|t}}
-							</p>
-						</div>
+{#          {% endfor %} #}
 
-					</div>
-					<div class="list-item">
-						<div class="border border-5 border-success border-top-0 border-bottom-0 border-end-0 ps-3">
-							<h4 class="text-ig-blue">{{"Training and qualification initiatives"|t}}</h4>
-							<p class="fs-5">{{"Establishment of specialized academies to provide scholarships and stimulate creative excellence"|t}}</p>
-						</div>
+{#        </div> #}
+{#      </div> #}
+{#    </div> #}
+{#  </div> #}
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+{#  <div class="section-inner mt-5"> #}
+{#    <div class="container"> #}
+{#      <div class="row members-list"> #}
+{#        {% for row in rows %} #}
+{#          {% set row_classes = [default_row_class ? 'views-row',] %} #}
 
-<div id="members" class="section">
-	<div class="section-header position-relative">
-		<div class="container">
-			<div class="row" style="height: 200px">
-				<div class="col-12 col-lg-8 align-self-center">
-					<h1 class="text-white">{{"Members of Digital Content Council"|t}}</h1>
-				</div>
-
-				<div class="col-12 col-lg-4">
-					{% for row in rows %}
-						{% if row['content']['#row']._entity.field_member_top.value == '1' %}
-						  {% set photo = row['content']['#row']._entity.field_member_photo.entity.fileuri %}          
-						  {% set entity = row['content']['#row']._entity %}          
-
-							<div class="member-item-master position-absolute" {% if photo %} style="background-image: url({{ file_url(photo|striptags|trim) }})" {% endif %}>
-
-								<div class="member-item-body d-flex flex-row justify-content-center" style="height: 100%;">
-									<div class="align-self-end mb-3 text-center" style="z-index: 2;">
-										<h5 class="text-white">
-										{{ entity.title.value|striptags|trim }}
-										</h5>
-										<h6 class="text-white">
-										{{ entity.field_member_name.value }}
-										</h6>
-
-										{# <small class="text-white">{{ entity.field_member_job_title.value|raw }}</small> #}
-									</div>
-								</div>
-
-							</div>
-
-						{% endif %}
-
-					{% endfor %}
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="section-inner mt-5">
-		<div class="container">
-			<div class="row members-list">
-				{% for row in rows %}
-					{% set row_classes = [default_row_class ? 'views-row',] %}
-
-					<div class="col-12 col-md-4 col-lg-3">
-						{{- row.content -}}
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-</div>
+{#          <div class="col-12 col-md-4 col-lg-3"> #}
+{#            {{- row.content -}} #}
+{#          </div> #}
+{#        {% endfor %} #}
+{#      </div> #}
+{#    </div> #}
+{#  </div> #}
+{# </div> #}

@@ -15,29 +15,86 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-{% if title %}
-  <h3>{{ title }}</h3>
-{% endif %}
-<!-- Section:Events -->
-<section id="events" class="section">
-  <div class="section-inner">
-    <div class="container mt-5">
-      <h2 class="section-title">{{ "IGNITE<br>Initiatives"|t }}</h2>
+<section class="my-px-60">
+  <div class="container-fluid overflow-hidden">
+    <div class="ige-block-initiatives__list" data-ige-sliders="#initiativesConfig">
+      {% for row in rows %}
+        {% set row_classes = [
+          default_row_class ? 'views-row',
+        ] %}
 
-      <div class="row gy-3 list">
-        {% for row in rows %}
-          {% set row_classes = [
-            default_row_class ? 'views-row',
-          ] %}
-
-
-          <div class="list-item col-12 col-lg-4">
-            {{- row.content -}}
-          </div>
-          <!-- END Section:Events -->
-        {% endfor %}
-      </div>
+        <div class="list-item col-12 col-lg-4">
+          {{- row.content -}}
+        </div>
+        <!-- END Section:Events -->
+      {% endfor %}
     </div>
-  </div>
+    <script type="application/json" id="initiativesConfig">
+      {
+        "slidesToShow": 4,
+        "slidesToScroll": 4,
+        "speed": 600,
+        "infinite": true,
+        "autoplay": true,
+        "responsive": [{
+          "breakpoint": 576,
+          "settings": {
+            "slidesToShow": 1,
+            "slidesToScroll": 1
+          }
+        }, {
+          "breakpoint": 768,
+          "settings": {
+            "slidesToShow": 2,
+            "slidesToScroll": 2
+          }
+        }, {
+          "breakpoint": 995,
+          "settings": {
+            "slidesToShow": 2,
+            "slidesToScroll": 2
+          }
+        }, {
+          "breakpoint": 1200,
+          "settings": {
+            "slidesToShow": 2,
+            "slidesToScroll": 2
+          }
+        }, {
+          "breakpoint": 1400,
+          "settings": {
+            "slidesToShow": 4,
+            "slidesToScroll": 4
+          }
+        }]
+      }
 
+    </script>
+  </div>
 </section>
+
+
+
+<!-- Section:Events -->
+{#<section id="events" class="section">#}
+
+{#  <div class="section-inner">#}
+{#    <div class="container mt-5">#}
+{#      <h2 class="section-title">{{ "IGNITE<br>Initiatives"|t }}</h2>#}
+
+{#      <div class="row gy-3 list">#}
+{#        {% for row in rows %}#}
+{#          {% set row_classes = [#}
+{#            default_row_class ? 'views-row',#}
+{#          ] %}#}
+
+{#          <div class="list-item col-12 col-lg-4">#}
+{#            {{- row.content -}}#}
+{#          </div>#}
+{#          <!-- END Section:Events -->#}
+{#        {% endfor %}#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+{#</section>#}

@@ -1,6 +1,0 @@
-# Default settings of the bootstrap5 theme.
-ignite_additional_copyright: "جميع الحقوق محفوظة لـ <b>أيقنايت</b>."
-ignite_introduction_status: true,
-ignite_introduction_title: 'عن أيقنايت'
-ignite_introduction_text:
-  value: "هذا نص تجريبي، تقدر تعدله من إعدادات الثيم 😍."
