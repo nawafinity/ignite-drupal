@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{% if is_rtl %}ar{% else %}en{% endif %}" dir="{% if is_rtl %}rtl{% else %}ltr{% endif %}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IGNITE | للمحتوى الرقمي السعودي</title>
+
+    <link href="{{ assets }}/css/ignite{% if is_rtl %}.rtl{% endif %}.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Slick -->
+</head>
+
+<body class="mater">
+<main>
+    {% block body %}{% endblock %}
+</main>
+
+<script src="{{ assets }}/js/ignite.js"></script>
+{% block scripts %}
+{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+.#{$prefix}categories {
+  margin-top: toRem(120);
+  margin-bottom: toRem(120);
+  overflow: hidden;
+
+  &-list {
+    display: flex;
+    flex-direction: row;
+    gap: toRem(20);
+    flex-wrap: nowrap;
+
+    @include media-breakpoint-down(lg) {
+      flex-wrap: wrap !important;
+    }
+
+    &__item {
+      width: calc(25% - toRem(20));
+      border-radius: toRem(30);
+
+      @include media-breakpoint-down(lg) {
+        width: calc(50% - toRem(20));
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-item {
+    height: toRem(600);
+    padding: toRem(15);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+    justify-content: space-evenly;
+    overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+      height: 300px;
+    }
+
+
+    &__icon {
+      height: calc(20% - toRem(10));
+      margin-left: auto;
+
+      svg {
+        width: toRem(42);
+        height: toRem(42);
+      }
+    }
+
+    &__illus {
+      width: auto;
+      height: calc(30% - toRem(10));
+      margin: toRem(-15);
+
+      svg {
+        width: 110%;
+        height: 150%;
+      }
+    }
+
+    &__description {
+      color: var(--#{$prefix}white);
+      width: 100%;
+      height: calc(50% - toRem(10));
+      display: flex;
+      justify-content: end;
+      flex-direction: column;
+
+      .explore {
+        width: 80%;
+        margin-top: toRem(15);
+        border-radius: toRem(4);
+        cursor: pointer;
+
+        @include media-breakpoint-down(lg) {
+          width: 100%;
+        }
+
+        .arrow {
+          transform: rotateY(-180deg);
+        }
+      }
+    }
+
+  }
+}

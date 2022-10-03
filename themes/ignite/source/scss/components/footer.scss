@@ -1,0 +1,40 @@
+.#{$prefix}footer {
+  width: 100%;
+  padding: toRem(65) 0;
+  background-color: var(--#{$prefix}primary);
+  color: var(--#{$prefix}light);
+  border-top-left-radius: toRem(33);
+  border-top-right-radius: toRem(33);
+  font-size: toRem(20);
+
+  &-logo {
+    width: 72%;
+    align-self: start;
+
+    img {
+
+    }
+  }
+  a {
+    color: var(--#{$prefix}light);
+    text-decoration: none;
+    font-weight: bolder;
+    transition: color .3s ease-in-out, all .3s ease-in-out;
+
+    &:hover {
+      color: var(--#{$prefix}danger);
+    }
+  }
+
+  &-socials {
+    color: var(--#{$prefix}light);
+
+    .icon {
+      fill: currentColor;
+    }
+  }
+
+  &-links {
+
+  }
+}

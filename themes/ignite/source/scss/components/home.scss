@@ -1,0 +1,26 @@
+.#{$prefix}home {
+
+  &-initiatives {
+    margin-top: toRem(60);
+    margin-bottom: toRem(60);
+    overflow: hidden;
+
+    &__item {
+      .card {
+        border-color: var(--#{$prefix}primary)
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--#{$prefix}black);
+        font-size: 20px;
+      }
+
+      .image {
+        height: toRem(220);
+        background-color: var(--#{$prefix}dark);
+        position: relative;
+      }
+    }
+  }
+}

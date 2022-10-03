@@ -1,0 +1,142 @@
+{
+  "title": "مبادرة المحتوى الرقمي | IGNITE",
+  "assets": "webassets",
+  "sponsors": [
+    {
+      "name": "وزارة الإتصالات وتقنية المعلومات",
+      "image": "mcit.png"
+    },
+    {
+      "name": "وزارة الإستثمار",
+      "image": "moi.png"
+    },
+    {
+      "name": "وزارة الإعلام",
+      "image": "mom.png"
+    },
+    {
+      "name": "وزارة الثقافة",
+      "image": "moc.png"
+    },
+    {
+      "name": "وزارة الموارد البشرية و التنمية الاجتماعية",
+      "image": "hrsd.png"
+    },
+    {
+      "name": "هيئة الاتصالات وتقنية المعلومات",
+      "image": "citc.png"
+    },
+    {
+      "name": "الهيئة السعودية للبيانات والذكاء الإصطناعي",
+      "image": "sdaia.png"
+    },
+    {
+      "name": "الهيئة السعودية للملكية الفكرية",
+      "image": "saip.png"
+    },
+    {
+      "name": "الهيئة العامة للإعلام المرئي والمسموع",
+      "image": "gcam.png"
+    },
+    {
+      "name": "الهيئة الملكية لتطوير مدينة الرياض",
+      "image": "rcfrc.png"
+    },
+    {
+      "name": "هيئة المحتوى المحلي والمشتريات الحكومية",
+      "image": "lcgpa.png"
+    },
+    {
+      "name": "هيئة الزكاة والضريبة والجمارك",
+      "image": "zatca.png"
+    },
+    {
+      "name": "برنامج جودة الحياة",
+      "image": "lqp.png"
+    },
+    {
+      "name": "الإتحاد السعودي للرياضات الإلكترونية",
+      "image": "snss.png"
+    },
+    {
+      "name": "صندوق التنمية الثقافي",
+      "image": "cdf.png"
+    },
+    {
+      "name": "مكتب إنشاء الشركات السعودية العالمية",
+      "image": "saudico.png"
+    }
+  ],
+  "categories": [
+    {
+      "title": "Game Design",
+      "color": "info",
+      "illus": "circles",
+      "img": "c-ghust"
+    },
+    {
+      "title": "Advertising Industry",
+      "color": "primary",
+      "illus": "shake",
+      "img": "c-video"
+    },
+    {
+      "title": "Acoustics Design",
+      "color": "success",
+      "illus": "undercircle",
+      "img": "c-audio"
+    },
+    {
+      "title": "Video Industry",
+      "color": "danger",
+      "illus": "stepstep",
+      "img": "c-play"
+    }
+  ],
+  "initiativesTypes": [
+    {
+      "name": "Training and Qualification",
+      "icon": "graduation"
+    },
+    {
+      "name": "Funding Initiatives",
+      "icon": "funding"
+    },
+    {
+      "name": "Organizational Initiatives",
+      "icon": "org"
+    }
+  ],
+  "ignites": [
+    {
+      "letter": "I",
+      "title": "Invigorate",
+      "desc": "Preparation of digital content in KSA"
+    },
+    {
+      "letter": "G",
+      "title": "Grow",
+      "desc": "Development of investment potentials in digital content and its platforms"
+    },
+    {
+      "letter": "N",
+      "title": "Nurture",
+      "desc": "Sponsorship of local digital advertising sector"
+    },
+    {
+      "letter": "I",
+      "title": "Improve",
+      "desc": "Access to talents in digital content and its platforms markets"
+    },
+    {
+      "letter": "T",
+      "title": "Transform",
+      "desc": "Development of infrastructure of digital content and its platforms in KSA"
+    },
+    {
+      "letter": "E",
+      "title": "Enable",
+      "desc": "Governance of the sector and improve relevant legislation"
+    }
+  ]
+}

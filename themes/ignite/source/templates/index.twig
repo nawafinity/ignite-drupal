@@ -1,0 +1,8 @@
+{% extends "layouts/_base.twig" %}
+{% set is_home = true %}
+{% set navbar_classes = "bg-transparent navbar-dark" %}
+{% set current = "home" %}
+
+{% block content %}
+    {% include "partials/_home_content.twig" %}
+{% endblock %}

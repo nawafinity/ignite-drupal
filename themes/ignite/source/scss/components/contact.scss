@@ -1,0 +1,11 @@
+.#{$prefix}contact {
+  &-social {
+    a {
+      color: var(--#{$prefix}danger);
+
+      svg {
+        @extend .icon-45;
+      }
+    }
+  }
+}

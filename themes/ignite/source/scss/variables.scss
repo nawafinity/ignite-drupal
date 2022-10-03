@@ -1,0 +1,15 @@
+$variable-prefix: ige-;
+
+// fonts
+$font-family-sans-serif: "Ignitext", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$blue: #005AFA;
+$darkblue: #0F1464;
+$hotpink: #FF3264;
+$green: #00C864;
+
+$primary: $darkblue;
+$success: $green;
+$danger: $hotpink;
+$info: $blue;

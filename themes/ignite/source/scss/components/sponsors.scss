@@ -1,0 +1,32 @@
+.#{$prefix}sponsors {
+  padding: toRem(24) 0;
+  overflow: hidden;
+
+  .slick-slide {
+    margin: 0 toRem(10);
+  }
+
+  &-item {
+    overflow: hidden;
+
+    .inner {
+      width: 200px;
+      height: 117px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      img {
+        object-fit: contain;
+
+        @include media-breakpoint-down(md) {
+          width: 50%;
+          height: 50%;
+          vertical-align: middle;
+        }
+      }
+
+
+    }
+  }
+}

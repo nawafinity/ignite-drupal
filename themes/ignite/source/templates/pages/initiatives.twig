@@ -1,0 +1,89 @@
+{% extends "../layouts/_base.twig" %}
+{% set navbar_classes = "navbar-light bg-white" %}
+{% set is_home = false %}
+{% set btn_variant = "primary" %}
+{% set current = "initiatives" %}
+
+{% block content %}
+    <section class="ige-section">
+        <div class="container-fluid">
+            <div class="ige-section-description">
+                <div class="ige-initiatives-carousel" data-ige-sliders="#initiativesSliderConfig">
+                    {% set colors = ["primary", "danger", "success", "info", "warning"] %}
+                    {% for sk in 0..3 %}
+                        <div class="ige-initiatives-carousel__item bg-{{ colors[sk] }}">
+                            <div class="ige-initiatives-carousel__item-bg" style="background-image: url('{{ assets }}/images/wallpapers/colorful.png')"></div>
+                            <div class="inner">
+                                <div class="ige-initiatives-carousel__item-logo">
+                                    <img src="{{ assets }}/images/logos/sdaia.svg"/>
+                                </div>
+                                <div class="ige-initiatives-carousel__item-flag">22 Days left</div>
+                                <div class="ige-initiatives-carousel__item-title">Slide title</div>
+                                <div class="ige-initiatives-carousel__item-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur at quam
+                                    hendrerit suspendisse aliqu.
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ige-section my-px-100">
+        <div class="container-xl">
+            <div class="ige-section-title ige-section-title--under">
+                <h3 class="text-capitalize">Newest Added</h3>
+            </div>
+
+            <div class="ige-section-description">
+                {# Section initiatives #}
+                {% include "../partials/_initiatives.twig" %}
+
+            </div>
+        </div>
+    </section>
+
+    <section class="ige-section my-px-100">
+        <div class="container-xl">
+            <div class="ige-section-title ige-section-title--under">
+                <h3 class="text-capitalize">Video Creation</h3>
+            </div>
+
+            <div class="ige-section-description">
+                {# Section initiatives #}
+                {% include "../partials/_initiatives.twig" %}
+
+            </div>
+        </div>
+    </section>
+
+    <section class="ige-section my-px-100">
+        <div class="container-xl">
+            <div class="ige-section-title ige-section-title--under">
+                <h3 class="text-capitalize">Game Design</h3>
+            </div>
+
+            <div class="ige-section-description">
+                {# Section initiatives #}
+                {% include "../partials/_initiatives.twig" %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script type="application/json" id="initiativesSliderConfig">
+        {
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "speed": 300,
+            "infinite": true,
+            "autoplay": true,
+            "arrow": true
+        }
+    </script>
+{% endblock %}

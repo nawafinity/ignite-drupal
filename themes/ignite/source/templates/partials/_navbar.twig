@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-xl {% if navbar_classes %}{{ navbar_classes }}{% endif %}">
+    <div class="container-xl">
+        <a class="navbar-brand" href="index.html">
+            <svg class="logo" data-src="{{ assets }}/images/logos/ige-logo.svg" fill="currentColor" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="navbarContent">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-none ms-xl-auto text-center text-xl-end">
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == "home" %} active {% endif %}" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == "about" %} active {% endif %}" href="about.html">About Ignite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == "initiatives" %} active {% endif %}" href="initiatives.html">Initiatives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{% if current == "contact" %} active {% endif %}" href="contact.html">Contact US</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link{% if current == "rtl" %} active {% endif %}" href="RTL.html">العربية</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link" href="light.html">
+                            <box-icon name="sun" class="icon" color="currentColor"></box-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

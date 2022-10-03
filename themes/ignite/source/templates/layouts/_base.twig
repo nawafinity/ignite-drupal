@@ -1,0 +1,13 @@
+{% extends "../layouts/_default.twig" %}
+
+{% block body %}
+    {# Base header #}
+    {% include "../partials/_header.twig" %}
+
+
+    {# Content #}
+    {% block content %}{% endblock %}
+
+    {# Always the same footer #}
+    {% include "../partials/_footer.twig" %}
+{% endblock %}

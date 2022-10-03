@@ -1,6 +1,6 @@
 name: Ignite
 type: theme
-description: A proviate theme for Ignite website (Only for Saudi MCIT).
+description: A private theme for Ignite website (Only for Saudi MCIT).
 core_version_requirement: ^8 || ^9
 base theme: false
 libraries:
@@ -15,3 +15,4 @@ regions:
   footer_copyright: 'Column 1 of footer copyright'
   footer_copyright_social: 'Column 2 of footer copyright'
   news_area: 'News'
+  categories_area: 'Categories'

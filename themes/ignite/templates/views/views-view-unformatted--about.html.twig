@@ -25,7 +25,6 @@
       <div class="ige-about-members">
         <div class="row g-3">
           {% for row in rows %}
-            {#            {% if row['content']['#row']._entity.field_member_top.value == '1' %} #}
             {% set photo = row['content']['#row']._entity.field_member_photo.entity.fileuri %}
             {% set entity = row['content']['#row']._entity %}
             <div
@@ -46,65 +45,9 @@
                 </div>
               </div>
             </div>
-            {#            {% endif %} #}
           {% endfor %}
         </div>
       </div>
     </div>
   </div>
 </section>
-{# <div id="members" class="section"> #}
-{#  <div class="section-header position-relative"> #}
-{#    <div class="container"> #}
-{#      <div class="row" style="height: 200px"> #}
-{#        <div class="col-12 col-lg-8 align-self-center"> #}
-{#          <h1 class="text-white">{{ "Members of Digital Content Council"|t }}</h1> #}
-{#        </div> #}
-
-{#        <div class="col-12 col-lg-4"> #}
-{#          {% for row in rows %} #}
-{#            {% if row['content']['#row']._entity.field_member_top.value == '1' %} #}
-{#              {% set photo = row['content']['#row']._entity.field_member_photo.entity.fileuri %} #}
-{#              {% set entity = row['content']['#row']._entity %} #}
-
-{#              <div #}
-{#                class="member-item-master position-absolute" {% if photo %} style="background-image: url({{ file_url(photo|striptags|trim) }})" {% endif %}> #}
-
-{#                <div class="member-item-body d-flex flex-row justify-content-center" style="height: 100%;"> #}
-{#                  <div class="align-self-end mb-3 text-center" style="z-index: 2;"> #}
-{#                    <h5 class="text-white"> #}
-{#                      {{ entity.title.value|striptags|trim }} #}
-{#                    </h5> #}
-{#                    <h6 class="text-white"> #}
-{#                      {{ entity.field_member_name.value }} #}
-{#                    </h6> #}
-
-{#                    #}{# <small class="text-white">{{ entity.field_member_job_title.value|raw }}</small> #}
-{#                  </div> #}
-{#                </div> #}
-
-{#              </div> #}
-
-{#            {% endif %} #}
-
-{#          {% endfor %} #}
-
-{#        </div> #}
-{#      </div> #}
-{#    </div> #}
-{#  </div> #}
-
-{#  <div class="section-inner mt-5"> #}
-{#    <div class="container"> #}
-{#      <div class="row members-list"> #}
-{#        {% for row in rows %} #}
-{#          {% set row_classes = [default_row_class ? 'views-row',] %} #}
-
-{#          <div class="col-12 col-md-4 col-lg-3"> #}
-{#            {{- row.content -}} #}
-{#          </div> #}
-{#        {% endfor %} #}
-{#      </div> #}
-{#    </div> #}
-{#  </div> #}
-{# </div> #}

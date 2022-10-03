@@ -1,0 +1,68 @@
+<div class="ige-block-initiatives__list" data-ige-sliders="#initiativesConfig">
+    {% for ik in 1..10 %}
+        <div class="ige-block-initiatives__item">
+            <div class="card mx-2 rounded-2 overflow-hidden">
+                <div class="image" style="background-image: url('{{ assets }}/images/clips/bg-6.png')"></div>
+                <div class="card-body">
+                    <h5><span class="badge bg-secondary">14 Days Left</span></h5>
+                    <h4 class="card-title mt-4">Motion design training program</h4>
+                    <p class="card-text mt-4">Some quick example text to build on the card title and make up the bulk
+                        of
+                        the card's content.</p>
+                    {% if btn_variant == "primary" %}
+                        <a href="#" class="btn btn-primary float-end">Register Now</a>
+                    {% else %}
+                        <a href="#" class="btn btn-link float-end">Register Now</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script type="application/json" id="initiativesConfig">
+    {
+        "slidesToShow": 4,
+        "slidesToScroll": 4,
+        "speed": 600,
+        "infinite": true,
+        "autoplay": true,
+        "responsive": [
+            {
+                "breakpoint": 576,
+                "settings": {
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1
+                }
+            },
+            {
+                "breakpoint": 768,
+                "settings": {
+                    "slidesToShow": 2,
+                    "slidesToScroll": 2
+                }
+            },
+            {
+                "breakpoint": 995,
+                "settings": {
+                    "slidesToShow": 2,
+                    "slidesToScroll": 2
+                }
+            },
+            {
+                "breakpoint": 1200,
+                "settings": {
+                    "slidesToShow": 2,
+                    "slidesToScroll": 2
+                }
+            },
+            {
+                "breakpoint": 1400,
+                "settings": {
+                    "slidesToShow": 4,
+                    "slidesToScroll": 4
+                }
+            }
+        ]
+    }
+</script>

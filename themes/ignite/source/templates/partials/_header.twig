@@ -1,0 +1,60 @@
+<header class="ige-header{% if is_home == false %} shadow-sm{% endif %}" {% if is_home %} style="background-image: url({{ assets }}/images/bgs/header-bg.webp)" {% endif %}>
+    {% if is_home %}
+        <svg class="ige-header-illus" data-src="{{ assets }}/images/illustrations/ilus-header.svg"/>
+    {% endif %}
+
+    {% include  "_navbar.twig" %}
+
+    {% if is_home %}
+        <div class="ige-header-content">
+            <div class="container-xl">
+                <div class="row gy-5">
+                    <div class="col-12 col-xl-8">
+                        <div class="ige-header-content__title">
+                            <h3>A new era for the content industry in Saudi Arabia</h3>
+                        </div>
+                        <div class="ige-header-content__description">
+                            <p>An executive program that aims to make the Kingdom of Saudi Arabia a leading country in
+                                the
+                                digital content sector and its platforms by 2030.</p>
+                        </div>
+
+                        <div class="ige-header-content__details">
+                            <div class="d-flex flex-column flex-md-row gy-3 gy-md-0 justify-content-center justify-content-lg-start">
+                                <div>
+                                    <img src="{{ assets }}/images/icons/user.svg" alt=""/>
+                                    <strong>Game Design</strong>
+                                </div>
+                                <div>
+                                    <img src="{{ assets }}/images/icons/video.svg" alt=""/>
+                                    <strong>Advertising Industry</strong>
+                                </div>
+                                <div>
+                                    <img src="{{ assets }}/images/icons/waves.svg" alt=""/>
+                                    <strong>Sound Design</strong>
+                                </div>
+                                <div>
+                                    <img src="{{ assets }}/images/icons/film.svg" alt=""/>
+                                    <strong>Video Industry</strong>
+                                </div>
+                            </div>
+
+                            <div class="mt-5">
+                                <a href="initiatives.html" class="btn btn-info btn-explorer">
+                                    <span class="text">Explore Initiatives</span>
+                                    <img src="{{ assets }}/images/icons/btnarrow.svg" alt="Explore Initiatives"
+                                         class="arrow"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="ige-header-content__videobtn">
+                            <img src="{{ assets }}/images/icons/play-btn.svg" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</header>

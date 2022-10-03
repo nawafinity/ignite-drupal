@@ -6,7 +6,7 @@
     <div class="card-body">
       <h5><span class="badge bg-secondary">14 Days Left</span></h5>
       <h4 class="card-title mt-4">{{ title|length > 20 ? title|slice(0, 80)|raw ~ '...' : title|raw }}</h4>
-      <p class="card-text mt-4">>{{ summary|length > 40 ? summary|slice(0, 40)|raw ~ '...' : summary|raw }}</p>
+      <p class="card-text mt-4">{{ summary|length > 40 ? summary|slice(0, 40)|raw ~ '...' : summary|raw }}</p>
       <a href="#" class="btn btn-link float-end">{{ 'Register Now'|t }}</a>
     </div>
   </div>

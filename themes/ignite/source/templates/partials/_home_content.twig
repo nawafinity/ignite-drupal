@@ -1,0 +1,33 @@
+{% include "_sponsors.twig" %}
+<div class="mt-5">
+    {% include "_clips.twig" %}
+    <div class="my-3 text-primary">
+        {% include "_texts.twig" %}
+    </div>
+    {% include "_clips.twig" %}
+    <div class="my-3 text-primary">
+        {% include "_texts.twig" %}
+    </div>
+
+</div>
+
+{# SECTION about #}
+<section class="my-px-60">
+    {% include "_about.twig" %}
+</section>
+
+{# SECTION status #}
+    {% include "_statistics.twig" %}
+
+    {# Section categories #}
+    {% include "_categories.twig" %}
+
+    {# Section initiatives #}
+<section class="my-px-60">
+    <div class="container-fluid overflow-hidden">
+        {% include "_initiatives.twig" %}
+    </div>
+</section>
+
+{# News #}
+    {% include "_news.twig" %}

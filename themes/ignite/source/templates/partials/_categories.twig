@@ -1,0 +1,29 @@
+<section class="ige-categories">
+    <div class="container-xl">
+        <div class="ige-categories-list">
+            {% for category in categories %}
+                <div class="ige-categories-list__item bg bg-{{ category.color }}">
+                    <div class="ige-categories-item">
+                        <div class="ige-categories-item__icon">
+                            <svg data-src="{{ assets }}/images/icons/{{ category.img }}.svg"/>
+
+                        </div>
+                        <div class="ige-categories-item__illus">
+                            <svg data-src="{{ assets }}/images/illustrations/{{ category.illus }}.svg"/>
+                        </div>
+
+                        <div class="ige-categories-item__description">
+                            <h5>{{ category.title }}</h5>
+                            <p>{{ category.description }}</p>
+                            <a class="btn btn-light text-primary text-start d-flex justify-content-between explore"
+                               href="/initiatives.html">
+                                <span>Explore Initiatives</span>
+                                <svg data-src="{{ assets }}/images/icons/arrow.svg" class="arrow"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,89 @@
+.#{$prefix}statistics {
+  margin-top: toRem(60);
+  margin-bottom: toRem(60);
+  overflow: hidden;
+
+  &-title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: toRem(60);
+    font-size: toRem(48);
+    color: var(--#{$prefix}dark);
+
+    h3 {
+      display: inline-block;
+      font-size: toRem(32);
+      font-weight: normal;
+      align-self: end;
+
+      @include media-breakpoint-down(xl) {
+        align-self: center;
+      }
+    }
+
+    svg {
+      width: toRem(320);
+    }
+
+    @include media-breakpoint-down(xl) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: toRem(25);
+    gap: toRem(10);
+
+    @include media-breakpoint-down(xl) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &-item {
+    position: relative;
+    width: calc(33% - toRem(10));
+    font-weight: bolder;
+    background: var(--#{$prefix}primary);
+    border-radius: toRem(24);
+    color: var(--#{$prefix}white);
+    padding: 2.5rem;
+
+    @include media-breakpoint-down(xl) {
+      width: 100%;
+    }
+
+    &__ilus {
+      position: absolute;
+      color: var(--ige-info);
+      fill: var(--ige-info);
+      top: 0;
+      left: 0;
+      right: 0;
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+    }
+
+    &__icon {
+      margin-bottom: toRem(15);
+      width: toRem(48);
+      height: toRem(48);
+    }
+
+    &__title {
+      margin-bottom: toRem(15);
+      font-size: toRem(28);
+    }
+
+    &__count {
+      font-size: toRem(32);
+      margin: 0;
+    }
+  }
+}
