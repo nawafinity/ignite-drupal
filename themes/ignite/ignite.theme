@@ -89,3 +89,50 @@ function ignite_preprocess_webform(&$vars) {
   $wf = \Drupal\webform\Entity\Webform::load($wfid);
   $vars["title"] = $wf->label();
 }
+
+function ignite_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->bundle() == 'initiative') {
+    $terms = [];
+
+    foreach ($node->getFields() as $key => $field) {
+      if ($field->getFieldDefinition()->getType() == 'entity_reference') {
+        $targetType = $field->getFieldDefinition()
+          ->getItemDefinition()
+          ->getSetting('target_type');
+        if ($targetType == 'taxonomy_term') {
+          $new_terms = array_map(function (\Drupal\taxonomy\TermInterface $term) {
+            return $term->label();
+          }, $field->referencedEntities());
+          $terms = array_merge($terms, $new_terms);
+        }
+      }
+    }
+
+    $variables['node_terms'] = $terms;
+  }
+}
+
+function ignite_preprocess_input(&$variables) {
+  $type = $variables['attributes']['type'];
+
+  if (!in_array($type, ['checkbox', 'submit', 'select'])) {
+    $variables['attributes']['class'][] = 'form-control';
+  }
+
+  if ($type === 'select') {
+    $variables['attributes']['class'][] = 'form-select';
+  }
+
+  if ($type === 'submit') {
+    $variables['attributes']['class'][] = 'btn';
+  }
+}
+
+function ignite_preprocess_textarea(&$variables) {
+  $variables['attributes']['class'][] = 'form-control';
+}
+
+function ignite_preprocess_form_element_label(&$variables) {
+  $variables['attributes']['class'][] = 'form-label';
+}

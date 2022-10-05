@@ -169,4 +169,28 @@
 
   }
 
+  .links {
+    @extend .navbar-nav;
+    list-style: none none;
+
+    li {
+      @extend .nav-item;
+      display: inline-block;
+    }
+
+    a {
+      @extend .nav-link;
+      color: var(--#{$prefix}white);
+
+      [lang='ar'] &[hreflang='ar'] {
+        display: none;
+      }
+
+      [lang='en'] &[hreflang='en'] {
+        display: none;
+      }
+    }
+
+  }
+
 }

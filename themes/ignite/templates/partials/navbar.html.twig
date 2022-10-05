@@ -1,4 +1,4 @@
-{% set navbar_classes = is_front ? "bg-transparent navbar-dark" : "navbar-light bg-white" %}
+{% set navbar_classes = is_front or header_full ? "bg-transparent navbar-dark" : "navbar-light bg-white" %}
 
 <nav class="navbar navbar-expand-xl {% if navbar_classes %}{{ navbar_classes }}{% endif %}">
   <div class="container-xl">

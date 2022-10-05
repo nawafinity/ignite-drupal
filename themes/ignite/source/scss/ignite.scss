@@ -43,6 +43,14 @@ Bootstrap reset
   border-radius: 0;
 }
 
+.form-item {
+  @extend .my-3;
+}
+
+.button--primary {
+  @extend .btn;
+  @extend .btn-primary;
+}
 // PX Margin generation
 @include pxMarginGenerator(5, 120);
 

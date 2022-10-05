@@ -1,0 +1,40 @@
+{% extends "@ignite/layout/page.html.twig" %}
+{% set header_full = true %}
+
+{#{% set background = node.fields.field_initiative_background %}#}
+
+{% set header_bg = file_url(background.entity.fileuri|striptags|trim) %}
+
+{% block header_content %}
+  <div class="ige-header-content">
+    <div class="container-xl">
+      <div class="row gy-5">
+        <div class="col-12 col-xl-8">
+          <div class="ige-header-content__title">
+            <h3>{{ node.label }}</h3>
+          </div>
+          <div class="ige-header-content__description">
+            <p>{{ node.fields.field_initiative_summary.value }}</p>
+          </div>
+
+          <div class="ige-header-content__details">
+
+            <div class="mt-5">
+              <a href="{{ url("<front>") }}initiatives" class="btn btn-info btn-explorer">
+                <span class="text">{{ "Register Now"|t }}</span>
+                <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/btnarrow.svg"
+                     alt="{{ "Register Now"|t }}" class="arrow"/>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="ige-header-content__videobtn">
+            <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/play-btn.svg"
+                 alt="{{ "Play Video"|t }}"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

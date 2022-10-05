@@ -1,10 +1,81 @@
 {# Header #}
-{% include '@ignite/partials/header.html.twig' %}
+<header
+  class="ige-header{% if is_front or header_full %} ige-header-full{% else %} shadow-sm{% endif %}" {% if is_front %} style="background-image: url({{ base_path ~ directory }}/dist/webassets/images/bgs/header-bg.webp)"{% endif %} {% if header_bg %} style="background-image: url({{ header_bg }})"{% endif %}>
+  {% if is_front %}
+    <svg class="ige-header-illus"
+         data-src="{{ base_path ~ directory }}/dist/webassets/images/illustrations/ilus-header.svg"/>
+  {% endif %}
+
+  {% include "@ignite/partials/navbar.html.twig" %}
+
+  {% if is_front %}
+    <div class="ige-header-content">
+      <div class="container-xl">
+        <div class="row gy-5">
+          <div class="col-12 col-xl-8">
+            <div class="ige-header-content__title">
+              <h3>{{ "A new era for the content industry in Saudi Arabia"|t }}</h3>
+            </div>
+            <div class="ige-header-content__description">
+              <p>{{ "An executive program that aims to make the Kingdom of Saudi Arabia a leading country in the digital content sector and its platforms by 2030."|t }}</p>
+            </div>
+
+            <div class="ige-header-content__details">
+              <div class="inner">
+                <div>
+                  <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/user.svg"
+                       alt="{{ "Game Design"|t }}"/>
+                  <strong>{{ "Game Design"|t }}</strong>
+                </div>
+                <div>
+                  <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/video.svg"
+                       alt="{{ "Advertising Industry"|t }}"/>
+                  <strong>{{ "Advertising Industry"|t }}</strong>
+                </div>
+                <div>
+                  <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/waves.svg"
+                       alt="{{ "Sound Design"|t }}"/>
+                  <strong>{{ "Sound Design"|t }}</strong>
+                </div>
+                <div>
+                  <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/film.svg"
+                       alt="{{ "Video Industry"|t }}"/>
+                  <strong>{{ "Video Industry"|t }}</strong>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <a href="{{ url("<front>") }}initiatives" class="btn btn-info btn-explorer">
+                  <span class="text">{{ "Explore Initiatives"|t }}</span>
+                  <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/btnarrow.svg"
+                       alt="{{ "Explore Initiatives"|t }}" class="arrow"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-4">
+            <div class="ige-header-content__videobtn">
+              <img src="{{ base_path ~ directory }}/dist/webassets/images/icons/play-btn.svg"
+                   alt="{{ "Play Video"|t }}"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {{ tara }}
+
+  {% block header_content %}{% endblock %}
+
+</header>
 
 
 <!-- END Carousel -->
 <!-- main-area -->
 <main>
+  {{ page.top_area }}
+
   {% if page_title %}
     <div class="ige-page-title my-px-30">
       <div class="container-xl">

@@ -4,10 +4,17 @@
   <div class="card mx-2 rounded-2 overflow-hidden">
     <div class="image"{% if fields.field_initiative_background.content %} style="background-image: url({{ file_url(fields.field_initiative_background.content|striptags|trim) }})" {% endif %}></div>
     <div class="card-body">
-      <h5><span class="badge bg-secondary">14 Days Left</span></h5>
+      {% if fields.field_start_date.content %}
+        {% set today = 'now'|date('U') %}
+        {% set start_date = fields.field_start_date.content|striptags|date('U') %}
+        {% set difference = start_date - today %}
+        {% set days_left = (difference / 60 / 60 / 24)|round(0, 'ceil') %}
+
+        <h5><span class="badge bg-secondary">{{ days_left }} {{ "Days left"|t }}</span></h5>
+      {% endif %}
       <h4 class="card-title mt-4">{{ title|length > 20 ? title|slice(0, 80)|raw ~ '...' : title|raw }}</h4>
       <p class="card-text mt-4">{{ summary|length > 40 ? summary|slice(0, 40)|raw ~ '...' : summary|raw }}</p>
-      <a href="#" class="btn btn-link float-end">{{ 'Register Now'|t }}</a>
+      <a href="{{ url('entity.node.canonical', {'node': fields.nid.content|striptags|number_format}) }}" class="btn btn-link float-end">{{ 'Register Now'|t }}</a>
     </div>
   </div>
 </div>
