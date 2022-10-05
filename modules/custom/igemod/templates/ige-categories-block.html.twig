@@ -1,0 +1,17 @@
+<section class="ige-section my-px-30">
+  <div class="container-xl">
+    <div class="ige-section-title ige-section-title--under">
+      <h2>{{ "Categories"|t }}</h2>
+    </div>
+    <div class="ige-section-content">
+      <div class="ige-initiatives-list">
+        {% for key,value in entries %}
+          <a class="text-decoration-none ige-initiatives-list__item bg-{{ value.field_variant.value }}" href="{{ path('view.initiatives.initiatives_page') }}/{{ value.tid.value }}">
+            {{ value.name.value }}
+          </a>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</section>

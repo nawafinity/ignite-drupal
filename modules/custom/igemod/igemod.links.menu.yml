@@ -1,0 +1,6 @@
+ige.admin:
+  title: 'Ignite module settings'
+  description: 'Ignite module settings.'
+  parent: system.admin_config_development
+  route_name: ige.content
+  weight: 100

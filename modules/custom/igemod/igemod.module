@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function igemod_theme($existing, $type, $theme, $path): array {
+  return [
+    'ige_news_block' => [
+      'variables' => [
+        'entries' => [],
+      ],
+    ],
+    'ige_categories_block' => [
+      'variables' => [
+        'entries' => [],
+      ],
+    ],
+    'ige_initiatives_carousel_block' => [
+      'variables' => [
+        'entries' => [],
+      ],
+    ],
+  ];
+}

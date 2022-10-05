@@ -1,0 +1,44 @@
+<section class="ige-section">
+  <div class="container-fluid">
+    <div class="ige-section-description">
+      <div class="ige-initiatives-carousel" data-ige-sliders="#initiativesSliderConfig">
+        {% for key,value in entries %}
+          {% set summary = value.field_initiative_summary.value|striptags|trim %}
+
+          <div class="ige-initiatives-carousel__item bg-primary">
+            <div class="ige-initiatives-carousel__item-bg"
+              {% if value.field_initiative_background.entity.fileuri %} style="background-image: url({{ file_url(value.field_initiative_background.entity.fileuri|striptags|trim) }})" {% endif %}></div>
+            <div class="inner">
+              <div class="ige-initiatives-carousel__item-logo">
+                {% if value.field_initiative_logo.entity.fileuri %}
+                  <img src="{{ file_url(value.field_initiative_logo.entity.uri.value|image_style('thumbnail')) }}"/>
+                {% endif %}
+              </div>
+              {% if value.field_start_date.value %}
+                {% set today = 'now'|date('U') %}
+                {% set start_date = value.field_start_date.value|date('U') %}
+                {% set difference = start_date - today %}
+                {% set days_left = (difference / 60 / 60 / 24)|round(0, 'ceil') %}
+
+                <div class="ige-initiatives-carousel__item-flag">{{ days_left }} {{ "Days left"|t }}</div>
+              {% endif %}
+              <div class="ige-initiatives-carousel__item-title">{{ value.title.value }}</div>
+              <div class="ige-initiatives-carousel__item-description">{{ summary }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="initiativesSliderConfig">
+  {
+    "slidesToShow": 1,
+    "slidesToScroll": 1,
+    "speed": 300,
+    "infinite": true,
+    "autoplay": true,
+    "arrow": true
+  }
+
+</script>

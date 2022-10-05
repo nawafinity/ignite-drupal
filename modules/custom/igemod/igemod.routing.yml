@@ -1,0 +1,7 @@
+ige.content:
+  path: '/ige'
+  defaults:
+    _controller: '\Drupal\igemod\Controller\IgeController::content'
+    _title: 'Ige Module'
+  requirements:
+    _permission: 'access content'
