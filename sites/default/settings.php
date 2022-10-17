@@ -772,7 +772,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 $databases['default']['default'] = array (
-  'database' => 'ignite_v2',
+  'database' => 'ignite',
   'username' => 'root',
   'password' => '',
   'prefix' => '',

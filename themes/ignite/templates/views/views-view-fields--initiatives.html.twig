@@ -8,11 +8,6 @@
       class="image"{% if fields.field_initiative_background.content %} style="background-image: url({{ file_url(fields.field_initiative_background.content|striptags|trim) }})" {% endif %}></div>
     <div class="card-body">
       <div class="header">
-        {% if fields.field_initiative_logo.content %}
-          <div class="logo">
-            <img src="{{ file_url(fields.field_initiative_logo.content|striptags|trim) }}" alt="{{ title }}"/>
-          </div>
-        {% endif %}
       </div>
       <div class="description">
         {% if fields.field_start_date.content %}
