@@ -219,7 +219,7 @@ Utils
  * Override
  */
 /*!
- * Bootstrap  v5.2.1 (https://getbootstrap.com/)
+ * Bootstrap  v5.2.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -3086,10 +3086,15 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-:not(.btn-check) + .btn:hover, :not(.btn-check) + .button--primary:hover, .btn:first-child:hover, .button--primary:first-child:hover {
+.btn:hover, .button--primary:hover {
   color: var(--ige-btn-hover-color);
   background-color: var(--ige-btn-hover-bg);
   border-color: var(--ige-btn-hover-border-color);
+}
+.btn-check + .btn:hover, .btn-check + .button--primary:hover {
+  color: var(--ige-btn-color);
+  background-color: var(--ige-btn-bg);
+  border-color: var(--ige-btn-border-color);
 }
 .btn.focus-visible, .button--primary.focus-visible {
   color: var(--ige-btn-hover-color);
@@ -4705,7 +4710,7 @@ textarea.form-control-lg {
 }
 
 .accordion {
-  --ige-accordion-color: var(--ige-body-color);
+  --ige-accordion-color: #212529;
   --ige-accordion-bg: #fff;
   --ige-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
   --ige-accordion-border-color: var(--ige-border-color);
@@ -4714,9 +4719,9 @@ textarea.form-control-lg {
   --ige-accordion-inner-border-radius: calc(0.375rem - 1px);
   --ige-accordion-btn-padding-x: 1.25rem;
   --ige-accordion-btn-padding-y: 1rem;
-  --ige-accordion-btn-color: var(--ige-body-color);
+  --ige-accordion-btn-color: #212529;
   --ige-accordion-btn-bg: var(--ige-accordion-bg);
-  --ige-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='var%28--ige-body-color%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --ige-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   --ige-accordion-btn-icon-width: 1.25rem;
   --ige-accordion-btn-icon-transform: rotate(-180deg);
   --ige-accordion-btn-icon-transition: transform 0.2s ease-in-out;
@@ -5586,6 +5591,7 @@ textarea.form-control-lg {
 }
 
 .toast-container {
+  --ige-toast-zindex: 1090;
   position: absolute;
   z-index: var(--ige-toast-zindex);
   width: -moz-max-content;
@@ -11657,7 +11663,7 @@ textarea.form-control-lg {
   z-index: 1;
 }
 .ige-block-about__title h3, .ige-block-about__title .h3 {
-  margin-right: 0.9375rem;
+  margin-left: 0.3125rem;
 }
 .ige-block-about__title img {
   width: 220px;
@@ -11670,8 +11676,53 @@ textarea.form-control-lg {
   overflow: hidden;
 }
 .ige-block-initiatives__item .card {
+  position: relative;
   border-color: #0F1464;
   border-color: var(--ige-primary);
+  background: #0F1464;
+  background: var(--ige-primary);
+  color: #f8f9fa;
+  color: var(--ige-light);
+  height: 350px;
+}
+.ige-block-initiatives__item .card-body {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ige-block-initiatives__item .card .logo {
+  overflow: hidden;
+  width: 140px;
+  height: 50px;
+  background-color: #fff;
+  background-color: var(--ige-white);
+  border-radius: 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ige-block-initiatives__item .card .logo img {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.ige-block-initiatives__item .card .image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.1;
 }
 .ige-block-initiatives__item .btn-link {
   text-decoration: none;
@@ -11893,8 +11944,6 @@ textarea.form-control-lg {
   overflow: hidden;
 }
 .ige-sponsors-item .inner {
-  width: 200px;
-  height: 117px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11907,8 +11956,6 @@ textarea.form-control-lg {
 }
 @media (max-width: 767.98px) {
   .ige-sponsors-item .inner img {
-    width: 50%;
-    height: 50%;
     vertical-align: middle;
   }
 }
@@ -12086,14 +12133,14 @@ About page
   flex-direction: row;
   margin-bottom: 3.75rem;
   font-size: 3rem;
-  color: #212529;
-  color: var(--ige-dark);
+  color: #6c757d;
+  color: var(--ige-gray);
 }
 .ige-statistics-title h3, .ige-statistics-title .h3 {
   display: inline-block;
   font-size: 2rem;
   font-weight: normal;
-  align-self: end;
+  align-self: center;
 }
 @media (max-width: 1199.98px) {
   .ige-statistics-title h3, .ige-statistics-title .h3 {
@@ -12165,8 +12212,10 @@ About page
   font-size: 1.75rem;
 }
 .ige-statistics-item__count {
-  font-size: 2rem;
+  font-size: 3.25rem;
   margin: 0;
+  color: #FF3264;
+  color: var(--ige-danger);
 }
 
 .ige-categories {
@@ -12371,6 +12420,11 @@ About page
   grid-gap: 10px;
   gap: 10px;
 }
+@media (max-width: 767.98px) {
+  .ige-initiatives-list {
+    flex-direction: column;
+  }
+}
 .ige-initiatives-list__item {
   width: calc(33% - 10px);
   background-color: #ced4da;
@@ -12384,6 +12438,11 @@ About page
 .ige-initiatives-list__item[class*=bg-] {
   color: #fff;
   color: var(--ige-white);
+}
+@media (max-width: 767.98px) {
+  .ige-initiatives-list__item {
+    width: 100% !important;
+  }
 }
 .ige-initiatives-carousel {
   margin: 1.875rem 1.875rem;

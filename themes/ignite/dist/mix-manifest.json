@@ -49,6 +49,7 @@
     "/webassets/images/illustrations/ilus-green.svg": "/webassets/images/illustrations/ilus-green.svg",
     "/webassets/images/illustrations/ilus-header.svg": "/webassets/images/illustrations/ilus-header.svg",
     "/webassets/images/illustrations/shake.svg": "/webassets/images/illustrations/shake.svg",
+    "/webassets/images/illustrations/sign.png": "/webassets/images/illustrations/sign.png",
     "/webassets/images/illustrations/stepstep.svg": "/webassets/images/illustrations/stepstep.svg",
     "/webassets/images/illustrations/undercircle.svg": "/webassets/images/illustrations/undercircle.svg",
     "/webassets/images/logos/ige-logo.svg": "/webassets/images/logos/ige-logo.svg",
@@ -98,6 +99,5 @@
     "/webassets/plugins/boxicons/fonts/boxicons.ttf": "/webassets/plugins/boxicons/fonts/boxicons.ttf",
     "/webassets/plugins/boxicons/fonts/boxicons.woff": "/webassets/plugins/boxicons/fonts/boxicons.woff",
     "/webassets/plugins/boxicons/fonts/boxicons.woff2": "/webassets/plugins/boxicons/fonts/boxicons.woff2",
-    "/webassets/plugins/boxicons/js/boxicons.js": "/webassets/plugins/boxicons/js/boxicons.js",
-    "/webassets/images/illustrations/sign.png": "/webassets/images/illustrations/sign.png"
+    "/webassets/plugins/boxicons/js/boxicons.js": "/webassets/plugins/boxicons/js/boxicons.js"
 }

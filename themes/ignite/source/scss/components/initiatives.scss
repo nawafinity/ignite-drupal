@@ -5,6 +5,10 @@
     flex-direction: row;
     gap: 10px;
 
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
     &__item {
       width: calc(33% - 10px);
       background-color: var(--#{$prefix}gray-400);
@@ -16,6 +20,10 @@
 
       &[class*="bg-"] {
         color: var(--#{$prefix}white);
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100% !important;
       }
     }
   }

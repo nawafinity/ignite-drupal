@@ -8,13 +8,13 @@
     flex-direction: row;
     margin-bottom: toRem(60);
     font-size: toRem(48);
-    color: var(--#{$prefix}dark);
+    color: var(--#{$prefix}gray);
 
     h3 {
       display: inline-block;
       font-size: toRem(32);
       font-weight: normal;
-      align-self: end;
+      align-self: center;
 
       @include media-breakpoint-down(xl) {
         align-self: center;
@@ -82,8 +82,9 @@
     }
 
     &__count {
-      font-size: toRem(32);
+      font-size: toRem(52);
       margin: 0;
+      color: var(--#{$prefix}danger)
     }
   }
 }
